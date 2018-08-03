@@ -3,7 +3,9 @@ app = Flask(__name__)
 
 
 class Genin():
-    def only_genin_can_do(self):
+
+    @staticmethod
+    def only_genin_can_do():
         return 'Graduiate from ninja academy'
 
     def validate(self, data):
@@ -12,7 +14,9 @@ class Genin():
         return True
 
 class Chunin():
-    def only_chunin_can_do(self):
+
+    @staticmethod
+    def only_chunin_can_do():
         return 'Take chunin exam'
 
     def validate(self, data):
@@ -21,7 +25,9 @@ class Chunin():
         return True
 
 class Jounin():
-    def only_jounin_can_do(self):
+
+    @staticmethod
+    def only_jounin_can_do():
         return 'Be a team leader'
 
     def validate(self, data):
