@@ -1,56 +1,68 @@
-data = [
+ninjas = [
     {
-        'name': 'Naruto',
-        'team': 7,
-        'skill': 'bunshin'
+        'name': 'Naruto', 'team': 7, 'skill': 'bunshin'
     },
     {
-        'name': 'Ino',
-        'team': 4,
-        'skill': 'mind transfer'
+        'name': 'Ino', 'team': 4, 'skill': 'mind transfer'
     },
     {
-        'name': 'Sakura',
-        'team': 7,
-        'skill': 'strenght'
+        'name': 'Sakura', 'team': 7, 'skill': 'strenght'
     },    
     {
-        'name': 'hinata',
-        'team': 2,
-        'skill': 'byakugan'
+        'name': 'hinata', 'team': 2, 'skill': 'byakugan'
     },    
     {
-        'name': 'Neji',
-        'team': 3,
-        'skill': 'byakugan'
+        'name': 'Neji', 'team': 3, 'skill': 'byakugan'
     },    
     {
-        'name': 'Kiba',
-        'team': 2,
-        'skill': 'dogggo'
+        'name': 'Kiba', 'team': 2, 'skill': 'dogggo'
     },    
     {
-        'name': 'Choji',
-        'team': 4,
-        'skill': 'expansion'
+        'name': 'Choji', 'team': 4, 'skill': 'expansion'
     },    
     {
-        'name': 'Sasuke',
-        'team': 7,
-        'skill': 'sharingan'
+        'name': 'Sasuke', 'team': 7, 'skill': 'sharingan'
     },
     {
-        'name': 'Rock Lee',
-        'team': 3,
-        'skill': 'taijutsu'
+        'name': 'Rock Lee', 'team': 3, 'skill': 'taijutsu'
     }
 ]
+
+"""
+# Transform data to this
+[{
+    'members': [
+        { 'name': 'Naruto', 'team': 7, 'skill': 'bunshin' }, 
+        { 'name': 'Sakura', 'team': 7, 'skill': 'strenght' }, 
+        { 'name': 'Sasuke', 'team': 7, 'skill': 'sharingan' }
+    ],
+    'member_count': 3
+}, {
+    'members': [
+        { 'name': 'Ino', 'team': 4, 'skill': 'mind transfer' }, 
+        { 'name': 'Choji', 'team': 4, 'skill': 'expansion' }
+    ],
+    'member_count': 2
+}, {
+    'members': [
+        { 'name': 'hinata', 'team': 2, 'skill': 'byakugan' }, 
+        { 'name': 'Kiba', 'team': 2, 'skill': 'dogggo' }
+    ],
+    'member_count': 2
+}, {
+    'members': [
+        { 'name': 'Neji', 'team': 3, 'skill': 'byakugan' }, 
+        { 'name': 'Rock Lee', 'team': 3, 'skill': 'taijutsu' }
+    ],
+    'member_count': 2
+}]
+"""
 
 
 teams = []
 temp_dict = {}
 
-for row in data:
+for row in ninjas:
     if row['team'] not in temp_dict:
         temp_dict[row['team']] = {
             'members': [],
@@ -61,7 +73,6 @@ for row in data:
     temp_dict[row['team']]['member_count'] += 1
 
 for team in temp_dict.values():
-    print(team)
     teams.append(team)
 
 print(teams)
